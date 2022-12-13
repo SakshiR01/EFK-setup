@@ -47,18 +47,18 @@ spec:
             value: "-Xms512m -Xmx512m"
           - name: xpack.security.enabled
             value: "true"
-          - name: xpack.security.transport.ssl.enabled
-            value: "true"
-          - name: xpack.security.transport.ssl.verification_mode
-            value: "certificate"
-          - name: xpack.security.transport.ssl.keystore.path
-            value: elastic-stack-ca.p12
-          - name: xpack.security.transport.ssl.truststore.path
-            value: elastic-stack-ca.p12 
-      volumes: 
-        - name: elastic-certificates
-          secret:
-            secretName: elastic-certificates           
+#           - name: xpack.security.transport.ssl.enabled
+#             value: "true"
+#           - name: xpack.security.transport.ssl.verification_mode
+#             value: "certificate"
+#           - name: xpack.security.transport.ssl.keystore.path
+#             value: elastic-stack-ca.p12
+#           - name: xpack.security.transport.ssl.truststore.path
+#             value: elastic-stack-ca.p12 
+#       volumes: 
+#         - name: elastic-certificates
+#           secret:
+#             secretName: elastic-certificates           
       initContainers:
       - name: fix-permissions
         image: busybox
