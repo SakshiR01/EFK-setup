@@ -27,6 +27,7 @@ kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: fluentd
+  namespace: kube-logging
 roleRef:
   kind: ClusterRole
   name: fluentd
