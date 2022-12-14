@@ -81,9 +81,9 @@ spec:
         - name: varlibdockercontainers
           mountPath: /var/lib/docker/containers
           readOnly: true
-        - mountPath: /fluentd/etc/fluent.conf
-          name: config
-          subPath: fluentd.conf  
+        - name: config
+          mountPath: /fluentd/etc/kubernetes.conf
+          subPath: kubernetes.conf  
       terminationGracePeriodSeconds: 30
       volumes:
       - name: varlog
@@ -92,6 +92,6 @@ spec:
       - name: varlibdockercontainers
         hostPath:
           path: /var/lib/docker/containers
-      - configMap:
-          name: fluentd
-        name: config    
+      - name: config
+        configMap:
+          name: fluentd-config
